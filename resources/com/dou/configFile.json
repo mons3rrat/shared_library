@@ -1,4 +1,5 @@
 {
   "emailApprovers": "monserrat.sedeno@digitalonus.com; gonzalo.lopez@digitalonus.com; oscar.aguilera@digitalonus.com",
-  "image": "gmlpdou/terraform_hub:0.11.10"
+  "image": "gmlpdou/terraform_hub:0.11.10",
+  "stlak-token": "VBI3ePV715FJR4vfrvWUYUHg"
 }
