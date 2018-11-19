@@ -1,6 +1,7 @@
 def call(stack){
+  def IP = ""
   dir("terraform") {
-    def IP = sh(script:'terraform output docker-ip',
+    IP = sh(script:'terraform output docker-ip',
         returnStdout: true).trim()
   }
   dir("app"){
