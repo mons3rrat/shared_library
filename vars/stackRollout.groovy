@@ -4,7 +4,7 @@ def call(stack){
         returnStdout: true).trim()
   }
   dir("app"){
-    sshagent(credential: ['ssh-private-key']) {
+    sshagent(credentials: ['ssh-private-key']) {
       sh """ssh -o StrictHostKeyChecking=no \
          -l ubuntu ${IP} \
            uname -a"""
