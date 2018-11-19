@@ -1,6 +1,8 @@
 {
   "emailApprovers": "monserrat.sedeno@digitalonus.com; gonzalo.lopez@digitalonus.com; oscar.aguilera@digitalonus.com",
-  "image": "gmlpdou/terraform_hub:0.11.10",
+  "imagePipeline": "gmlpdou/terraform_hub:0.11.10",
+  "image": "gmlpdou/contact_app",
+  "stackName": "contac-app",
   "title": "PR Created Automatically by Jenkins",
   "slack": "https://digitalonus.slack.com/services/hooks/jenkins-ci/"
 }
