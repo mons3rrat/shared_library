@@ -1,4 +1,4 @@
-def call(stackName, stackFile){
+def call(String stackName, String stackFile){
   def String IP = ""
   dir("terraform") {
     IP = sh(script:'terraform output docker-ip',
