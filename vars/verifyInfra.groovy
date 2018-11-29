@@ -1,6 +1,8 @@
-def call(){
+def call(String path){
     dir("terraform"){
-        sh 'terraform init -input=false'
-        sh 'terraform validate'
+        dir("./${path}"){
+            sh 'terraform init -input=false'
+            sh 'terraform validate'
+        }
     }
 }
