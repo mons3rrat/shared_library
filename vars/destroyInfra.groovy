@@ -1,5 +1,7 @@
-def call(){
+def call(String path=''){
     dir("terraform") {
-        sh 'terraform destroy -force -input=false'
+        dir("./${path}"){
+            sh 'terraform destroy -force -input=false'
+        }
     }
 }
