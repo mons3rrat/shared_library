@@ -2,6 +2,7 @@
   "emailApprovers": "monserrat.sedeno@digitalonus.com; gonzalo.lopez@digitalonus.com; oscar.aguilera@digitalonus.com",
   "imagePipeline": "gmlpdou/terraform_hub:0.11.10",
   "image": "gmlpdou/contact_app",
+  "imageChef": "gmlpdou/chefdk-ec2",
   "stackName": "contac-app",
   "stackFile": "deployment-stack.yml",
   "sonarServer": "192.168.1.250",
