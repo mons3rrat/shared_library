@@ -1,4 +1,4 @@
-def call(String image, String sonarServer){
+def call(String image, String sonarServer, Bool push2Registry=true){
   def String tagBeta = "${currentBuild.displayName}-${env.BRANCH_NAME}".replace("/","-")
   dir ("app"){
     configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
@@ -10,15 +10,18 @@ def call(String image, String sonarServer){
               -t ${image}:${tagBeta} ."""
     }
   }
-  
-  withCredentials([usernamePassword(
-    credentialsId: "docker",
-    usernameVariable: "USER",
-    passwordVariable: "PASS"
-  )]) {
-    sh "docker login -u $USER -p '${PASS}'"
-  }
 
-  sh """docker image push \
-      ${image}:${tagBeta}"""
+  if(push2Registry) {
+    withCredentials([usernamePassword(
+      credentialsId: "docker",
+      usernameVariable: "USER",
+      passwordVariable: "PASS"
+    )]) {
+      sh "docker login -u $USER -p '${PASS}'"
+    }
+
+    sh """docker image push \
+        ${image}:${tagBeta}"""
+
+  } 
 }
