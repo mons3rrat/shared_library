@@ -1,4 +1,4 @@
-def call(String image, String sonarServer, Bool push2Registry=true){
+def call(String image, String sonarServer, Boolean push2Registry=true){
   def String tagBeta = "${currentBuild.displayName}-${env.BRANCH_NAME}".replace("/","-")
   dir ("app"){
     configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
